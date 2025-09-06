@@ -1,9 +1,102 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 – Registration & Profile Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
 <body>
+    <button id="themeToggle" aria-label="Toggle theme">Toggle Theme</button>
 
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
+    <h1>Student Registration</h1>
 
+    <form id="registrationForm" novalidate>
+        
+        <div class="form-group">
+            <label for="firstName">First name(s)<span aria-hidden="true">*</span></label>
+            <input type="text" id="firstName" name="firstName" required aria-required="true">
+            <div class="error" id="firstNameError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last name<span aria-hidden="true">*</span></label>
+            <input type="text" id="lastName" name="lastName" required aria-required="true">
+            <div class="error" id="lastNameError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email<span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required aria-required="true">
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="programme">Programme<span aria-hidden="true">*</span></label>
+            <select id="programme" name="programme" required aria-required="true">
+                <option value="">-- Select --</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+            </select>
+            <div class="error" id="programmeError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="year">Year<span aria-hidden="true">*</span></label>
+            <select id="year" name="year" required aria-required="true">
+                <option value="">-- Select --</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+            </select>
+            <div class="error" id="yearError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="interests">Interests</label>
+            <textarea id="interests" name="interests" rows="3" placeholder="e.g. Programming, AI, Robotics"></textarea>
+            <div class="error" id="interestsError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Photo URL</label>
+            <input type="url" id="photo" name="photo" placeholder="https://example.com/photo.jpg">
+            <div class="error" id="photoError"></div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Register</button>
+        </div>
+
+        <div id="formMessage" role="alert" aria-live="polite" class="form-message"></div>
+    </form>
+
+    <hr>
+
+    <h2>Profile Cards</h2>
+    <div id="cardsContainer" class="cards-container" aria-live="polite"></div>
+
+    <h2>Summary Table</h2>
+    <table id="summaryTable">
+        <caption>Registered Students</caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Programme</th>
+                <th scope="col">Year</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+  
 </body>
-</html> 
+</html>
