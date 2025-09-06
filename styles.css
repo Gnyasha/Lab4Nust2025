@@ -10,17 +10,27 @@ html {
     font-size: 16px;
 }
 
+
 body {
+    position: relative;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     padding: 2rem;
-    background-image: url('https://source.unsplash.com/PhYq704ffdA/1920x1080');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     color: #222;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url('https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 0.1;
+        z-index: -1;
+    }
 
 #themeToggle {
     position: fixed;
